@@ -7,11 +7,6 @@ import {
   Zap,
   Star,
   Award,
-  ChevronRight,
-  Menu,
-  X,
-  Clock,
-  ArrowRight,
   Phone,
   Mail,
   MapPin,
@@ -19,10 +14,12 @@ import {
   Target,
   Heart,
 } from "lucide-react";
+import HeroSection from "@/components/Hero";
+
+import ScrollingPosters from "@/components/Gallery";
 
 const RoximoLensesLanding = () => {
-  const [activeProduct, setActiveProduct] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -373,69 +370,8 @@ const RoximoLensesLanding = () => {
         />
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-50 backdrop-blur-xl bg-white/10 border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
-                <Eye className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                Roximo Lenses
-              </h1>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#products"
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Products
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                Contact
-              </a>
-            </div>
-
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="backdrop-blur-xl bg-white/10 rounded-3xl border border-white/20 p-12 shadow-2xl">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-              Premium Vision Solutions
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-              Experience the future of optical excellence with our cutting-edge
-              lens technology. Crystal clear vision, ultimate protection, and
-              unmatched durability.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* About Us Section */}
       <section id="about" className="relative z-10 py-20">
@@ -533,6 +469,8 @@ const RoximoLensesLanding = () => {
           </div>
         </div>
       </section>
+
+      <ScrollingPosters />
 
       {/* Products Section */}
       <section id="products" className="relative z-10 py-20">
