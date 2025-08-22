@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   const [activeProduct, setActiveProduct] = useState(0);
@@ -11,11 +12,13 @@ export default function Header() {
         <div className="flex justify-between items-center py-5">
           <div className="flex items-center space-x-4">
             <div className="w-20 h-20 flex items-center justify-center">
-              <img
-                src="logo.png"
-                alt="Roximo Lenses"
-                className="w-20 h-20 object-contain"
-              />
+              <Link href="/">
+                <img
+                  src="logo.png"
+                  alt="Roximo Lenses"
+                  className="w-20 h-20 object-contain"
+                />
+              </Link>
             </div>
           </div>
 
@@ -34,6 +37,12 @@ export default function Header() {
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <Link href="/ZR">
+              <p className="text-gray-600 hover:text-gray-900 transition-all duration-300 font-medium relative group">
+                Zero Reflection
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+              </p>
+            </Link>
             <a
               href="#contact"
               className="text-gray-600 hover:text-gray-900 transition-all duration-300 font-medium relative group"

@@ -160,7 +160,7 @@ export default function ZeroReflectionPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 items-center gap-16 lg:gap-24">
+          <div className="grid lg:grid-cols-2 items-center gap-16 lg:gap-24 mb-8">
             {/* Hero Content */}
             <div
               className={`space-y-10 text-center lg:text-left transform transition-all duration-1000 ${
@@ -180,7 +180,7 @@ export default function ZeroReflectionPage() {
               </div>
 
               <div className="space-y-4">
-                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-[0.85] tracking-tight">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tight">
                   <span className="text-white">ZERO</span>
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
@@ -282,40 +282,6 @@ export default function ZeroReflectionPage() {
                     style={{ animation: "scan 3s ease-in-out infinite" }}
                   />
                 </div>
-
-                {/* Floating data points */}
-                {[
-                  {
-                    icon: Target,
-                    value: "0.3%",
-                    label: "Reflection",
-                    position: "top-1/4 -left-16",
-                  },
-                  {
-                    icon: Zap,
-                    value: "2.1ms",
-                    label: "Response",
-                    position: "bottom-1/3 -right-16",
-                  },
-                  {
-                    icon: TrendingUp,
-                    value: "340%",
-                    label: "Performance",
-                    position: "top-1/2 -right-20",
-                  },
-                ].map((point, i) => (
-                  <div
-                    key={i}
-                    className={`absolute ${point.position} bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 animate-float`}
-                    style={{ animationDelay: `${i * 500}ms` }}
-                  >
-                    <point.icon className="h-5 w-5 text-cyan-400 mb-2" />
-                    <div className="text-white font-bold text-lg">
-                      {point.value}
-                    </div>
-                    <div className="text-white/70 text-xs">{point.label}</div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
